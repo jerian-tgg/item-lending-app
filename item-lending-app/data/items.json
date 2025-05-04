@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "name": "Power Drill",
+        "description": "Cordless drill with battery",
+        "owner": "Tool Library",
+        "available": true,
+        "image": "drill.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Camping Tent",
+        "description": "4-person waterproof tent",
+        "owner": "Outdoor Club",
+        "available": false,
+        "image": "tent.jpg",
+        "borrowed_by": "ann"
+    }
+]
