@@ -12,12 +12,14 @@ $items = Item::getAllItems();
 <html>
 <head>
     <title>Browse Items</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/item-lending-app/public/css/styles.css">
 </head>
 <body>
     <div class="container">
         <!-- Home Button -->
         <p><a href="index.php" class="home-button">← Return to Home</a></p>
+        <!-- Add Item Button -->
+        <p><a href="add_item.php" class="btn">+ Add New Item</a></p>
 
         <h2>Available Items</h2>
         <div class="item-grid">

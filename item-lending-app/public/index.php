@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once __DIR__ . '/../autoload.php';
 
 $user = Auth::getUser();
@@ -7,19 +7,23 @@ $user = Auth::getUser();
 <html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/item-lending-app/public/css/styles.css">
 </head>
 <body>
     <div class="container">
         <?php if (Auth::isLoggedIn()): ?>
             <h2>Welcome, <?= htmlspecialchars($user['fullName']) ?>!</h2>
-            <ul>
-                <li>Username: <?= htmlspecialchars($user['username']) ?></li>
-                <li>Email: <?= htmlspecialchars($user['email']) ?></li>
-            </ul>
-            <p><a href="items.php">Browse Items</a> | <a href="logout.php">Logout</a></p>
+            <div class="info-box">
+                <p><strong>Username:</strong> <?= htmlspecialchars($user['username']) ?></p>
+                <p><strong>Email:</strong> <?= htmlspecialchars($user['email']) ?></p>
+            </div>
+            <div class="actions">
+                <a href="items.php" class="button-link">Browse Items</a>
+                <a href="logout.php" class="button-link">Logout</a>
+            </div>
         <?php else: ?>
-            <p><a href="login.php">Login</a> or <a href="register.php">Register</a></p>
+            <div class="alert error">You are not logged in.</div>
+            <p class="text-center"><a href="login.php">Login</a> or <a href="register.php">Register</a></p>
         <?php endif; ?>
     </div>
 </body>
