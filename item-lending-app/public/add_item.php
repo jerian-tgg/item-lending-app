@@ -12,20 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($name && $description && $image) {
         if ($image['error'] === UPLOAD_ERR_OK) {
-            $targetDir = __DIR__ . '/../public/images/';
+            $targetDir = __DIR__ . '/item-lending-app/public/images/';
             if (!is_dir($targetDir)) {
                 mkdir($targetDir, 0777, true);  // Create if it doesn't exist
             }
-
-            // Debug output to check the folder and file info
-            echo '<pre>';
-            echo 'Upload dir: ' . $targetDir . PHP_EOL;
-            echo 'Is dir: ' . (is_dir($targetDir) ? 'yes' : 'no') . PHP_EOL;
-            echo 'Is writable: ' . (is_writable($targetDir) ? 'yes' : 'no') . PHP_EOL;
-            echo 'Temp file: ' . $image['tmp_name'] . PHP_EOL;
-            echo 'Error: ' . $image['error'] . PHP_EOL;
-            echo '</pre>';
-
+            
             // Generate a unique name to avoid overwriting
             $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
             $newFileName = uniqid('item_', true) . '.' . $ext;
