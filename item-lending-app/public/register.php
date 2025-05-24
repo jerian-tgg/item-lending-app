@@ -22,30 +22,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
     <title>Register</title>
-    <link rel="stylesheet" href="/item-lending-app/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
     <div class="container">
         <h2>Register</h2>
         <?php if ($error): ?>
-            <div class="alert error"><?php echo htmlspecialchars($error); ?></div>
+            <div class="error"><?= $error ?></div>
         <?php endif; ?>
         <form method="POST">
-            <label>Username:</label>
-            <input type="text" name="username" required>
-
-            <label>Password:</label>
-            <input type="password" name="password" required>
-
-            <label>Full Name:</label>
-            <input type="text" name="fullName" required>
-
-            <label>Email:</label>
-            <input type="email" name="email" required>
-
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" name="username" required>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label>Full Name:</label>
+                <input type="text" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email" required>
+            </div>
             <button type="submit">Register</button>
         </form>
-        <p style="text-align:center; margin-top:1rem;">Already have an account? <a href="login.php">Login here</a></p>
+        <p>Already have an account? <a href="login.php">Login here</a></p>
     </div>
 </body>
 </html>

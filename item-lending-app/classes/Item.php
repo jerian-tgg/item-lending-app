@@ -38,11 +38,4 @@ class Item {
         }
         return false;
     }
-
-    // NEW: Add item
-    public static function addItem($newItem) {
-        $items = self::getAllItems();
-        $items[] = $newItem;
-        file_put_contents(self::$itemsFile, json_encode($items, JSON_PRETTY_PRINT));
-    }
 }
