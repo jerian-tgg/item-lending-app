@@ -7,7 +7,7 @@ $user = Auth::getUser();
 <html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">

@@ -12,7 +12,7 @@ $items = Item::getAllItems();
 <html>
 <head>
     <title>Browse Items</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">

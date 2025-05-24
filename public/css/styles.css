@@ -1,0 +1,244 @@
+/* style.css - Modern & Optimized Version */
+
+/* Root Variables for Easy Theming */
+:root {
+    --font-base: 'Segoe UI', 'Arial', sans-serif;
+    --color-bg: #f5f5f5;
+    --color-text: #333;
+    --color-light: #fff;
+    --color-accent: #0066cc;
+    --color-success: #4caf50;
+    --color-error: #f44336;
+    --color-warning: #ffeb3b;
+    --radius: 8px;
+    --shadow-sm: 0 1px 5px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-base);
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 0;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    background: var(--color-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+}
+
+/* Header & Navigation */
+header {
+    margin-bottom: 24px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.25s;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--color-accent);
+}
+
+/* Messages */
+.message,
+.error {
+    padding: 12px 16px;
+    margin: 16px 0;
+    border-left: 5px solid;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.message {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-color: var(--color-success);
+}
+
+.error {
+    background: #ffebee;
+    color: #c62828;
+    border-color: var(--color-error);
+}
+
+/* Item Grid */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+/* Item Card */
+.item-card {
+    background: var(--color-light);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius);
+    padding: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.item-card.unavailable {
+    opacity: 0.6;
+    background: #f9f9f9;
+}
+
+.item-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #eee;
+}
+
+.item-card h3 {
+    font-size: 1.25rem;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.item-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Status Label */
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--color-warning);
+    color: #333;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* Buttons */
+button,
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+    background: #555;
+}
+
+/* Special Buttons */
+.return-button {
+    background: var(--color-success);
+}
+
+.return-button:hover {
+    background: #3d8b40;
+}
+
+.home-button {
+    display: inline-block;
+    background: #e0e0e0;
+    color: #333;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.home-button:hover {
+    background: #d0d0d0;
+}
+
+/* Forms */
+form {
+    margin: 30px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--color-accent);
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .item-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .item-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+}

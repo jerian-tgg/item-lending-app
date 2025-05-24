@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start(); // Already started in autoload.php
 require_once __DIR__ . '/../classes/Auth.php';
 ?>
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ require_once __DIR__ . '/../classes/Auth.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Lending App</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
